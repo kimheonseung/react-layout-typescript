@@ -1,5 +1,5 @@
 import LoginPage from './pages/login';
-import Chat from './pages/chat/Chat';
+import ChatPage from './pages/chat';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { GlobalStyle } from './styles/global-style';
 import { ThemeProvider } from "styled-components";
@@ -16,10 +16,10 @@ const theme = {
 }
 
 function App() {
-  const isThemeDark = useSelector( (state: RootState) => state.themeChanger.isDark );
+  const isThemeDark: boolean = useSelector( (state: RootState) => state.themeChanger.isDark );
   const dispatch = useDispatch();
 
-  const themeChange = () => {
+  const themeChange = (): void => {
 		dispatch(change());
 	}
 
@@ -31,7 +31,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='login' element={<LoginPage />} />
-            <Route path='chat' element={<Chat />} />
+            <Route path='chat' element={<ChatPage />} />
           </Routes>
         </BrowserRouter>
       </div>

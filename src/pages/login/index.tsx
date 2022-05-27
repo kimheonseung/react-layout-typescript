@@ -19,7 +19,7 @@ function LoginPage() {
 	const [userId, setUserId] = useState("");
 	const [password, setPassword] = useState("");
 
-	const inputMaxLength = 20;
+	const inputMaxLength: number = 20;
 
 	const handleEnterDown = (e: KeyboardEvent<HTMLInputElement>): void => {
 		if(e.key === 'Enter')

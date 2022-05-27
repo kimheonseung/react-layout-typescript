@@ -1,7 +1,8 @@
+import { Reducer } from "redux";
 import { combineReducers } from "redux";
 import themeChanger from "./themes";
 
-const rootReducer = combineReducers({
+const rootReducer: Reducer = combineReducers({
   themeChanger
 });
 
