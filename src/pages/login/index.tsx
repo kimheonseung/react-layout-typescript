@@ -19,13 +19,23 @@ function LoginPage() {
 	const [userId, setUserId] = useState("");
 	const [password, setPassword] = useState("");
 
+	const inputMaxLength = 20;
+
 	const handleEnterDown = (e: KeyboardEvent<HTMLInputElement>) => {
 		if(e.key === 'Enter')
 			submitLogin();
 	}
-	const handleKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
-		if(e.currentTarget.value.length > 20)
-			return;
+	const handleUserIdKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
+		if(e.currentTarget.value.length > inputMaxLength) {
+			e.currentTarget.value = e.currentTarget.value.substr(0, inputMaxLength);
+			setUserId(e.currentTarget.value);
+		}
+	}
+	const handlePasswordKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
+		if(e.currentTarget.value.length > inputMaxLength) {
+			e.currentTarget.value = e.currentTarget.value.substr(0, inputMaxLength);
+			setPassword(e.currentTarget.value);
+		}
 	}
 
 	const submitLogin = () => {
@@ -46,7 +56,7 @@ function LoginPage() {
 					autoComplete='off'
 					value={userId}
 					onChange={({target: {value}}) => setUserId(value)}
-					onKeyUp={handleKeyUp}
+					onKeyUp={handleUserIdKeyUp}
 					onKeyDown={handleEnterDown}
 					placeholder='Enter ID' 
 					/>
@@ -56,7 +66,7 @@ function LoginPage() {
 					required
 					value={password}
 					onChange={({target: {value}}) => setPassword(value)}
-					onKeyUp={handleKeyUp}
+					onKeyUp={handlePasswordKeyUp}
 					onKeyDown={handleEnterDown}
 					placeholder='Enter PW' 
 					/>
