@@ -21,24 +21,24 @@ function LoginPage() {
 
 	const inputMaxLength = 20;
 
-	const handleEnterDown = (e: KeyboardEvent<HTMLInputElement>) => {
+	const handleEnterDown = (e: KeyboardEvent<HTMLInputElement>): void => {
 		if(e.key === 'Enter')
 			submitLogin();
 	}
-	const handleUserIdKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
+	const handleUserIdKeyUp = (e: KeyboardEvent<HTMLInputElement>): void => {
 		if(e.currentTarget.value.length > inputMaxLength) {
 			e.currentTarget.value = e.currentTarget.value.substr(0, inputMaxLength);
 			setUserId(e.currentTarget.value);
 		}
 	}
-	const handlePasswordKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
+	const handlePasswordKeyUp = (e: KeyboardEvent<HTMLInputElement>): void => {
 		if(e.currentTarget.value.length > inputMaxLength) {
 			e.currentTarget.value = e.currentTarget.value.substr(0, inputMaxLength);
 			setPassword(e.currentTarget.value);
 		}
 	}
 
-	const submitLogin = () => {
+	const submitLogin = (): void => {
 		console.log(userId, password)
 	}
 

@@ -6,9 +6,9 @@ const CenteredFlexDefault = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const BootstrapButtonDefault = styled.button.attrs({
-  className: 'btn btn-lg btn-secondary'
-})``;
+const BootstrapButtonDefault = styled.button.attrs(props => ({
+  className: props.theme.button.className
+}))``;
 
 export const StyledPageWrapper = styled(CenteredFlexDefault)`
   background-color: ${ props => props.theme.background.color };
