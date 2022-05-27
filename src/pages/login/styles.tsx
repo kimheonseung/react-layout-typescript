@@ -47,8 +47,8 @@ export const StyledInput = styled.input`
   border: 0;
   width: 100%;
   height: 2rem;
-  maxlength: 10;
   margin-bottom: 10px;
+  text-align: center;
   font-size: 0.8rem;
 `;
 export const StyledButtonWrapper = styled(CenteredFlexDefault)`

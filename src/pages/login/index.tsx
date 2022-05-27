@@ -20,12 +20,12 @@ function LoginPage() {
 	const [password, setPassword] = useState("");
 
 	const handleEnterDown = (e: KeyboardEvent<HTMLInputElement>) => {
-		console.log(e.currentTarget.value);
 		if(e.key === 'Enter')
 			submitLogin();
 	}
 	const handleKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
-		console.log(e.currentTarget.value);
+		if(e.currentTarget.value.length > 20)
+			return;
 	}
 
 	const submitLogin = () => {
@@ -46,6 +46,7 @@ function LoginPage() {
 					autoComplete='off'
 					value={userId}
 					onChange={({target: {value}}) => setUserId(value)}
+					onKeyUp={handleKeyUp}
 					onKeyDown={handleEnterDown}
 					placeholder='Enter ID' 
 					/>
@@ -55,6 +56,7 @@ function LoginPage() {
 					required
 					value={password}
 					onChange={({target: {value}}) => setPassword(value)}
+					onKeyUp={handleKeyUp}
 					onKeyDown={handleEnterDown}
 					placeholder='Enter PW' 
 					/>
