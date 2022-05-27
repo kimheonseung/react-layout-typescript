@@ -1,5 +1,18 @@
 import { useState, KeyboardEvent } from 'react';
-import { StyledPageWrapper, StyledInputWrapper, StyledInput, StyledLogoWrapper, StyledLogoImage, StyledButtonWrapper } from './styles';
+import { 
+	StyledPageWrapper, 
+	StyledInputWrapper, 
+	StyledInput, 
+	StyledLogoWrapper, 
+	StyledLogoImage, 
+	StyledButtonWrapper,
+	StyledButtonLoginWrapper,
+	StyledButtonRegForgetWrapper,
+	StyledLoginButton,
+	StyledRegForgotButton,
+} from './styles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt, faUserPlus, faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 function LoginPage() {
 
@@ -47,7 +60,19 @@ function LoginPage() {
 					/>
     	</StyledInputWrapper>
 			<StyledButtonWrapper>
-
+				<StyledButtonLoginWrapper>
+					<StyledLoginButton>
+						<FontAwesomeIcon icon={faSignInAlt} />
+					</StyledLoginButton>
+				</StyledButtonLoginWrapper>
+				<StyledButtonRegForgetWrapper>
+					<StyledRegForgotButton>
+						<FontAwesomeIcon icon={faUserPlus} />
+					</StyledRegForgotButton>
+					<StyledRegForgotButton>
+						<FontAwesomeIcon icon={faQuestion} />
+					</StyledRegForgotButton>
+				</StyledButtonRegForgetWrapper>
 			</StyledButtonWrapper>
 		</StyledPageWrapper>
   );
